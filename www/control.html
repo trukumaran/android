@@ -59,7 +59,7 @@ $( "#fan" ).on( "change", function( event ) {
 deviceStatus = $(this).val();
 	               $.get( 
                   "https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
-                  { id: 2, status:deviceStatus},
+                  { id: 3, status:deviceStatus},
                   function(data) {
                      if(data == 'sucs'){
 					 console.log("sucs");
@@ -104,9 +104,9 @@ deviceStatus = $(this).val();
 
 
 
-               <label for = "slider">Hall Fan</label>
+               <h3>Hall Fan</h3>
                <input type = "range" name = "slider" id = "fan" 
-                  value = "20" min = "0" max = "100" data-highlight = "true">
+                  value = "2" min = "0" max = "5" data-highlight = "true">
 
                
             </form>
