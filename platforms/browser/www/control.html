@@ -18,7 +18,8 @@ $( "#kitchenLight" ).on( "change", function( event ) {
 
 deviceStatus = $(this).val();
 	               $.get( 
-                  "https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
+                  //"https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
+				  "http://192.168.5.119/test/1.php",
                   { id: 1, status:deviceStatus},
                   function(data) {
                      if(data == 'sucs'){
@@ -38,7 +39,8 @@ $( "#bathLight" ).on( "change", function( event ) {
 
 deviceStatus = $(this).val();
 	               $.get( 
-                  "https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
+                  //"https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
+				  "http://192.168.5.119/test/1.php",
                   { id: 2, status:deviceStatus},
                   function(data) {
                      if(data == 'sucs'){
@@ -58,7 +60,8 @@ $( "#fan" ).on( "change", function( event ) {
 
 deviceStatus = $(this).val();
 	               $.get( 
-                  "https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
+                  //"https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
+				  "http://192.168.5.119/test/1.php",
                   { id: 3, status:deviceStatus},
                   function(data) {
                      if(data == 'sucs'){
