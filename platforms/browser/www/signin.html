@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+      <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+      <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	  
+	  
+	  
+	      <script>
+// Starting at http://example.com/
+ 
+ 
+ 
+ $( document ).ready(function() {
+    
+
+// Define a click binding for all anchors in the page
+$( "a" ).on( "click", function( event ) {
+
+ 
+  // Prevent the usual navigation behavior
+  event.preventDefault();
+ 
+  // Alter the url according to the anchor's href attribute, and
+  // store the data-foo attribute information with the url
+  //$.mobile.navigate( this.attr( "href" ), { foo: this.attr( "data-foo" ) });
+var data = "";
+email =  $('#txt-email').val();
+password =  $('#txt-password').val();
+ 
+	               $.post( 
+                  "http://localhost/test/2.php",
+                  { email: email, password:password},
+                  function(data) {
+                     if(data == 'sucs'){
+					 console.log("sucs");
+					 //$.mobile.navigate('control.html');
+					 //window.location = "control.html";
+					 
+					 
+					 	$.mobile.navigate("control.html");
+						//console.log($(this).attr( "href" ));
+					 
+					 
+					 }else{
+					 //alert('Login is Denied! Please provide Valid Credentials');
+					 
+					 // Dialog present in a multipage document
+					 //$.mobile.changePage( "#dlg", { role: "popup" } );
+					 console.log("fail");
+					 //window.location = "index.html";
+
+					 }
+                  }
+               );
+ 
+ 
+});
+
+});
+</script>
+	  
+	  
+	  
+   </head>
+   <body>
+   
+<div data-role="page">
+        <div data-role="header" data-theme="c">
+            <h1>ARI Smart Switch</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h3>Sign In</h3>
+            <label for="txt-email">Email Address</label>
+            <input type="text" name="txt-email" id="txt-email" value="">
+            <label for="txt-password">Password</label>
+            <input type="password" name="txt-password" id="txt-password" value="">
+            <fieldset data-role="controlgroup">
+                <!--<input type="checkbox" name="chck-rememberme" id="chck-rememberme" checked="">-->
+                <!--<label for="chck-rememberme">Remember me</label>-->
+            </fieldset>
+            <a href="#" data-role="button" data-inline="true" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5" id="btn-sign-in">Submit</a>
+			
+			
+            <p class="mc-top-margin-1-5"><a href="begin-password-reset.html">Can't access your account?</a></p>
+            <div data-role="popup" id="dlg" data-dismissible="false" style="max-width:400px;">
+                <div role="main" class="ui-content">
+                    <h3 class="mc-text-danger">Login Failed</h3>
+                    <p>Did you enter the right credentials?</p>
+                    <div class="mc-text-center"><a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5">OK</a></div>
+                </div>
+            </div>
+        </div><!-- /content -->
+    </div><!-- /page -->
+	   </body>
+</html>

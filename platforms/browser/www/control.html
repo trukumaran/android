@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+      <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+      <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	  
+	  
+<script>
+ 
+ $( document ).ready(function() {
+    
+
+// Define a click binding for all anchors in the page
+$( "#kitchenLight" ).on( "change", function( event ) {
+
+deviceStatus = $(this).val();
+	               $.get( 
+                  "https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
+                  { id: 1, status:deviceStatus},
+                  function(data) {
+                     if(data == 'sucs'){
+					 console.log("sucs");
+					 }else{
+					 console.log("fail");
+					 }
+                  }
+               );
+ 
+ 
+});
+
+
+// Define a click binding for all anchors in the page
+$( "#bathLight" ).on( "change", function( event ) {
+
+deviceStatus = $(this).val();
+	               $.get( 
+                  "https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
+                  { id: 2, status:deviceStatus},
+                  function(data) {
+                     if(data == 'sucs'){
+					 console.log("sucs");
+					 }else{
+					 console.log("fail");
+					 }
+                  }
+               );
+ 
+ 
+});
+
+
+// Define a click binding for all anchors in the page
+$( "#fan" ).on( "change", function( event ) {
+
+deviceStatus = $(this).val();
+	               $.get( 
+                  "https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
+                  { id: 2, status:deviceStatus},
+                  function(data) {
+                     if(data == 'sucs'){
+					 console.log("sucs");
+					 }else{
+					 console.log("fail");
+					 }
+                  }
+               );
+ 
+ 
+});
+
+
+
+});
+</script>	  
+	  
+	  
+   </head>
+   
+   <body>
+      <div data-role = "page">
+         <div data-role = "header">
+            <h2>ARI Smart Switch</h2>
+            
+         </div>
+         
+         <div data-role = "main" class = "ui-content">
+            <form method = "post" action = "jquery_mobile/demo1.php">
+
+		<h3>Bathroom Light</h3>
+         <select data-role = "flipswitch" id="bathLight">
+            <option>Off</option>
+            <option>On</option>
+         </select>
+		 
+		<h3>Kitchen Light</h3>
+         <select data-role = "flipswitch" id="kitchenLight">
+            <option>Off</option>
+            <option>On</option>
+         </select>		 
+
+
+
+               <label for = "slider">Hall Fan</label>
+               <input type = "range" name = "slider" id = "fan" 
+                  value = "20" min = "0" max = "100" data-highlight = "true">
+
+               
+            </form>
+         </div>
+      </div>
+      
+   </body>
+</html>
