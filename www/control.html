@@ -24,9 +24,7 @@ deviceStatus = $(this).val();
 			   //"https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
 			   //"http://172.16.2.93/test/api.php",
 				  
-  url: "https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
-  crossDomain: true,
-  cache: false,
+  url: "api.php",
   data: { id: 1, status:deviceStatus},
   success: function(data) {
                      console.log(data);
@@ -44,9 +42,9 @@ $( "#bathLight" ).on( "change", function( event ) {
 
 deviceStatus = $(this).val();
 	               $.get( 
-                  "https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
+                  //"https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
 				  //"http://172.16.2.93/test/api.php",
-				  //"api.php",
+				  "api.php",
                   { id: 2, status:deviceStatus},
                   function(data) {
                      console.log(data);
@@ -62,9 +60,9 @@ $( "#fan" ).on( "change", function( event ) {
 
 deviceStatus = $(this).val();
 	               $.get( 
-                  "https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
+                  //"https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
 				  //"http://172.16.2.93/test/api.php",
-				  //"api.php",
+				  "api.php",
                   { id: 3, status:deviceStatus},
                   function(data) {
                      console.log(data);
