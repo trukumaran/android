@@ -13,41 +13,43 @@
  $( document ).ready(function() {
     
 
-// Define a click binding for all anchors in the page
+// Define a click binding for kitchenLight in the page
 $( "#kitchenLight" ).on( "change", function( event ) {
 
 deviceStatus = $(this).val();
-	               $.get( 
-                  //"https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
-				  "http://192.168.5.119/test/1.php",
-                  { id: 1, status:deviceStatus},
-                  function(data) {
-                     if(data == 'sucs'){
-					 console.log("sucs");
-					 }else{
-					 console.log("fail");
-					 }
+			   
+			   
+			   
+			   $.ajax({
+			   //"https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
+			   //"http://172.16.2.93/test/api.php",
+				  
+  url: "https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
+  crossDomain: true,
+  cache: false,
+  data: { id: 1, status:deviceStatus},
+  success: function(data) {
+                     console.log(data);
                   }
-               );
+});
+			   
+		
  
  
 });
 
 
-// Define a click binding for all anchors in the page
+// Define a click binding for bathroomLight in the page
 $( "#bathLight" ).on( "change", function( event ) {
 
 deviceStatus = $(this).val();
 	               $.get( 
-                  //"https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
-				  "http://192.168.5.119/test/1.php",
+                  "https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
+				  //"http://172.16.2.93/test/api.php",
+				  //"api.php",
                   { id: 2, status:deviceStatus},
                   function(data) {
-                     if(data == 'sucs'){
-					 console.log("sucs");
-					 }else{
-					 console.log("fail");
-					 }
+                     console.log(data);
                   }
                );
  
@@ -60,15 +62,12 @@ $( "#fan" ).on( "change", function( event ) {
 
 deviceStatus = $(this).val();
 	               $.get( 
-                  //"https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
-				  "http://192.168.5.119/test/1.php",
+                  "https://epidermoid-plots.000webhostapp.com/nodmculed/update.php",
+				  //"http://172.16.2.93/test/api.php",
+				  //"api.php",
                   { id: 3, status:deviceStatus},
                   function(data) {
-                     if(data == 'sucs'){
-					 console.log("sucs");
-					 }else{
-					 console.log("fail");
-					 }
+                     console.log(data);
                   }
                );
  
@@ -105,7 +104,9 @@ deviceStatus = $(this).val();
          <select data-role = "flipswitch" id="bathLight">
             <option>Off</option>
             <option>On</option>
-         </select>		 
+         </select>	
+
+		
 
 
 
